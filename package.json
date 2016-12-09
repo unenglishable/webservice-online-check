@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "lodash": "^4.17.2",
+    "request": "^2.79.0"
+  },
+  "name": "webservice-online-check",
+  "version": "1.0.0",
+  "description": "checks if a url is online, via a supplied test string",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unenglishable/webservice-online-check.git"
+  },
+  "author": "unenglishable",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unenglishable/webservice-online-check/issues"
+  },
+  "homepage": "https://github.com/unenglishable/webservice-online-check#readme"
+}
