@@ -33,5 +33,6 @@ result.url <String> // the url you supplied
 result.status <String> // 'online' OR 'offline'
 
 result.errors [Array] // populated if 'offline'
-                      // an array of any errors encountered
+                      // an array of unique errors encountered
+                      // for this specific URL
 ```
