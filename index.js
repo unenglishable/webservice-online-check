@@ -6,6 +6,7 @@ var KeywordMismatchError = Promise.OperationalError;
 
 // configured values
 var minimumPasses = 7;
+var totalTests = 10;
 
 var test = function(testURL, testKeyword) {
   return request(testURL).spread(function(response, body) {
@@ -20,18 +21,7 @@ var test = function(testURL, testKeyword) {
 
 module.exports = function(urls, keyword) {
   return Promise.map(urls, function(url) {
-    return Promise.some([
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword),
-      test(url, keyword)
-    ], minimumPasses)
+    return Promise.some(_.fill(Array(totalTests), test(url, keyword)), minimumPasses)
     .then(function() {
       return { url, status: 'online' };
     })
